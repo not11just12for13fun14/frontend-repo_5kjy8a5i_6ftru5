@@ -9,14 +9,7 @@ import FinalCTA from './components/FinalCTA'
 function App() {
   return (
     <div className="min-h-screen bg-[#0f1221] text-slate-100 antialiased">
-      {/* Background orbs and subtle grid */}
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute -top-32 -left-20 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl" />
-        <div className="absolute top-40 -right-24 h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/15 blur-[120px]" />
-        <div className="absolute bottom-[-12rem] left-1/2 -translate-x-1/2 h-[32rem] w-[32rem] rounded-full bg-sky-500/10 blur-[120px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0,transparent_95%,rgba(255,255,255,0.05)_95%),linear-gradient(to_bottom,transparent_0,transparent_95%,rgba(255,255,255,0.05)_95%)] bg-[size:24px_24px] opacity-[0.12]" />
-      </div>
-
+      {/* Clean, solid theme – no gradients */}
       <Navbar />
       <main>
         <Hero />

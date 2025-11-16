@@ -28,7 +28,7 @@ export default function Testimonials() {
     <section id="testimonials" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">Loved by modern schools</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">Loved by modern schools</h2>
           <p className="mt-3 text-slate-300">Trusted by forward-thinking institutions worldwide.</p>
         </div>
 
@@ -54,7 +54,7 @@ export default function Testimonials() {
           <p className="text-center text-xs uppercase tracking-wider text-slate-400">Schools using NovaSchool</p>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
             {logos.map(l => (
-              <div key={l} className="text-sm font-semibold text-slate-200 bg-gradient-to-br from-white/5 to-white/0 rounded-xl py-3 border border-white/10 shadow-inner">{l}</div>
+              <div key={l} className="text-sm font-semibold text-slate-200 rounded-xl py-3 border border-white/10 shadow-inner bg-[#141833]">{l}</div>
             ))}
           </div>
         </div>

@@ -30,7 +30,7 @@ export default function Pricing() {
     <section id="pricing" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">Pricing that scales with you</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">Pricing that scales with you</h2>
           <p className="mt-3 text-slate-300">Simple tiers, transparent value. Start free and upgrade when you grow.</p>
         </div>
 
@@ -38,7 +38,7 @@ export default function Pricing() {
           {tiers.map((t, i) => (
             <motion.div key={t.name} initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className={`relative rounded-3xl p-6 backdrop-blur-xl border shadow-[0_10px_40px_rgba(2,6,23,0.4)] ${t.highlighted ? 'bg-white/10 border-indigo-400/30' : 'bg-white/5 border-white/10'}`}>
               {t.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-sky-500 px-3 py-1 text-xs font-semibold text-white shadow">Recommended</div>
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-indigo-600 px-3 py-1 text-xs font-semibold text-white shadow">Recommended</div>
               )}
               <div className="flex items-baseline justify-between">
                 <h3 className="text-xl font-semibold text-slate-100">{t.name}</h3>
@@ -51,14 +51,14 @@ export default function Pricing() {
               <ul className="mt-4 space-y-3 text-sm">
                 {t.features.map(f => (
                   <li key={f} className="flex items-center gap-2 text-slate-200">
-                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500 text-white"><Check className="h-3 w-3" /></span>
+                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-white"><Check className="h-3 w-3" /></span>
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="mt-6">
-                <button className={`w-full rounded-full px-5 py-2 text-sm font-semibold shadow ${t.highlighted ? 'text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-sky-500' : 'bg-white/5 border border-white/10 text-slate-100 hover:bg-white/10'}`}>Choose {t.name}</button>
+                <button className={`w-full rounded-full px-5 py-2 text-sm font-semibold shadow ${t.highlighted ? 'text-white bg-indigo-600 hover:bg-indigo-500' : 'bg-white/5 border border-white/10 text-slate-100 hover:bg-white/10'}`}>Choose {t.name}</button>
               </div>
             </motion.div>
           ))}
