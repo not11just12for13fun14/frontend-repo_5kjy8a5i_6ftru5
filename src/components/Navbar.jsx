@@ -1,8 +1,19 @@
 import { Menu, School } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
+  const user = (() => {
+    try { return JSON.parse(localStorage.getItem('user')) } catch { return null }
+  })()
+
+  const logout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    window.location.href = '/'
+  }
+
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-slate-200 dark:bg-[#0b0e1a]/80 dark:border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,10 +36,21 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <a href="#pricing" className="hidden sm:inline-flex items-center text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Sign in</a>
-            <a href="#pricing" className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-indigo-600/20 hover:bg-indigo-500 transition">
-              Start free
-            </a>
+            {!user ? (
+              <>
+                <Link to="/login" className="hidden sm:inline-flex items-center text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Sign in</Link>
+                <Link to="/register" className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-indigo-600/20 hover:bg-indigo-500 transition">
+                  Start free
+                </Link>
+              </>
+            ) : (
+              <>
+                <span className="hidden sm:inline text-sm text-slate-700 dark:text-slate-300">Hi, {user.name || user.email}</span>
+                <button onClick={logout} className="inline-flex items-center gap-2 rounded-full bg-slate-900/5 px-4 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-900/10 dark:bg-white/10 dark:text-slate-200 dark:ring-white/10 dark:hover:bg-white/15">
+                  Log out
+                </button>
+              </>
+            )}
             <button className="md:hidden rounded-xl p-2 hover:bg-slate-100 dark:hover:bg-white/10">
               <Menu className="h-5 w-5 text-slate-700 dark:text-slate-300" />
             </button>
