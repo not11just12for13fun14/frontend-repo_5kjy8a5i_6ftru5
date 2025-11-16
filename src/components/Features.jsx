@@ -13,22 +13,22 @@ export default function Features() {
     <section id="features" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
             Built for calm, efficient administration
           </h2>
-          <p className="mt-3 text-slate-300">Automate the routine, amplify outcomes. Every workflow refined for speed.</p>
+          <p className="mt-3 text-slate-600 dark:text-slate-300">Automate the routine, amplify outcomes. Every workflow refined for speed.</p>
         </div>
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
-            <motion.div key={f.title} initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="group relative rounded-2xl p-6 bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(2,6,23,0.4)]">
+            <motion.div key={f.title} initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="group relative rounded-2xl p-6 bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:backdrop-blur-xl dark:border-white/10 dark:shadow-[0_10px_40px_rgba(2,6,23,0.4)]">
               <div className="relative flex items-center gap-3">
                 <div className="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-md">
                   <f.icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-semibold text-slate-100">{f.title}</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">{f.title}</h3>
               </div>
-              <p className="relative mt-3 text-sm text-slate-300">{f.desc}</p>
+              <p className="relative mt-3 text-sm text-slate-600 dark:text-slate-300">{f.desc}</p>
             </motion.div>
           ))}
         </div>
