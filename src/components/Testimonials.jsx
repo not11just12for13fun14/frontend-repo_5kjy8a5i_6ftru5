@@ -28,33 +28,33 @@ export default function Testimonials() {
     <section id="testimonials" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Loved by modern schools</h2>
-          <p className="mt-3 text-slate-600">Trusted by forward-thinking institutions worldwide.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">Loved by modern schools</h2>
+          <p className="mt-3 text-slate-300">Trusted by forward-thinking institutions worldwide.</p>
         </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           {testimonials.map((t) => (
-            <div key={t.name} className="rounded-2xl bg-white/70 border border-white/60 backdrop-blur-xl p-6 shadow-xl">
+            <div key={t.name} className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl p-6 shadow-[0_10px_40px_rgba(2,6,23,0.4)]">
               <div className="flex items-center gap-3">
                 <img src={t.avatar} alt="" className="h-12 w-12 rounded-full object-cover" />
                 <div>
-                  <p className="font-semibold">{t.name}</p>
-                  <p className="text-xs text-slate-500">{t.role}</p>
+                  <p className="font-semibold text-slate-100">{t.name}</p>
+                  <p className="text-xs text-slate-400">{t.role}</p>
                 </div>
               </div>
-              <div className="mt-4 flex items-center text-amber-500">
+              <div className="mt-4 flex items-center text-amber-400">
                 {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
               </div>
-              <p className="mt-4 text-slate-700">“{t.quote}”</p>
+              <p className="mt-4 text-slate-200">“{t.quote}”</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl border border-white/60 bg-white/50 backdrop-blur p-6">
-          <p className="text-center text-xs uppercase tracking-wider text-slate-500">Schools using NovaSchool</p>
+        <div className="mt-14 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6">
+          <p className="text-center text-xs uppercase tracking-wider text-slate-400">Schools using NovaSchool</p>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
             {logos.map(l => (
-              <div key={l} className="text-sm font-semibold text-slate-700 bg-gradient-to-br from-slate-50 to-white rounded-xl py-3 border border-white/70 shadow-inner">{l}</div>
+              <div key={l} className="text-sm font-semibold text-slate-200 bg-gradient-to-br from-white/5 to-white/0 rounded-xl py-3 border border-white/10 shadow-inner">{l}</div>
             ))}
           </div>
         </div>
