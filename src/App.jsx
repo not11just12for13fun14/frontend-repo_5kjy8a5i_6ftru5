@@ -5,6 +5,7 @@ import Onboarding from './components/Onboarding'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
 import FinalCTA from './components/FinalCTA'
+import { Link } from 'react-router-dom'
 
 function App() {
   return (
@@ -17,6 +18,20 @@ function App() {
         <Testimonials />
         <Pricing />
         <FinalCTA />
+
+        <div className="py-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-2xl border border-slate-200/70 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold">Try the School Dashboard</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">Requires sign in</p>
+                </div>
+                <Link to="/dashboard" className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-indigo-600/20 hover:bg-indigo-500 transition">Open dashboard</Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer className="border-t border-slate-200 dark:border-white/10">
