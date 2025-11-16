@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
             <motion.div whileHover={{ rotate: 10 }} className="relative">
-              <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] ring-1 ring-slate-200 dark:bg-white/10 dark:ring-white/10">
+              <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] ring-1 ring-slate-200 dark:bg:white/10 dark:bg-white/10 dark:ring-white/10">
                 <School className="h-5 w-5 text-indigo-600 dark:text-indigo-300" />
               </div>
             </motion.div>
@@ -36,6 +36,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
+            <Link to="/request-demo" className="hidden sm:inline-flex items-center text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Request demo</Link>
             {!user ? (
               <>
                 <Link to="/login" className="hidden sm:inline-flex items-center text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Sign in</Link>
