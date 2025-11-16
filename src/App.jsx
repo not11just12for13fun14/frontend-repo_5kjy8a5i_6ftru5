@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import TrustedBy from './components/TrustedBy'
 import Features from './components/Features'
 import Onboarding from './components/Onboarding'
 import Testimonials from './components/Testimonials'
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <TrustedBy />
         <Features />
         <Onboarding />
         <Testimonials />
